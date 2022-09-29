@@ -13,7 +13,7 @@ sudo apt-get -y install nginx
 sudo service nginx start
 sudo mkdir -p /data/web_static/releases/test/
 sudo mkdir -p /data/web_static/shared/
-sudo printf "%s" "$html" >> /data/web_static/releases/test/index.html
+printf "%s" "$html" >> /data/web_static/releases/test/index.html
 sudo ln -sf /data/web_static/releases/test/ /data/web_static/current
 sudo chown -R ubuntu:ubuntu /data/
 # Update the Nginx configuration to serve the content of /data/web_static/current/ to hbnb_static
