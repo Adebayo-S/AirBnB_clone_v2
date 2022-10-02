@@ -24,17 +24,17 @@ def do_deploy(archive_path):
     try:
         file = archive_path.split("/")[-1]
         name = file.split(".")[0]
-        path = "/data/web_static/releases/{}/".format(name)
+        path = "/data/web_static/releases/".format(name)
         put(archive_path, "/tmp/")
-        run('mkdir -p {}{}/'.format(path, name))
-        run('tar -xzf /tmp/{} -C {}{'.format(file, path))
-        run('rm /tmp/{}'.format(file))
-        run('mv {}/web_static/* {}/'.format(path, path))
-        run("rm -rf {}web_static".format(path))
-        run('rm -rf /data/web_static/current')
-        run("ln -s {} /data/web_static/current".format(path))
+        run('sudo mkdir -p {}{}/'.format(path, name))
+        run('sudo tar -xzf /tmp/{} -C {}{}/'.format(file, path, name))
+        run('sudo rm /tmp/{}'.format(file))
+        run('sudo mv {0}{1}/web_static/* {0}{1}/'.format(path, name))
+        run("sudo rm -rf {}{}/web_static".format(path, name))
+        run('sudo rm -rf /data/web_static/current')
+        run("sudo ln -s {}{}/ /data/web_static/current".format(path, name))
         run('echo "New version deployed!"')
         return True
     except BaseException:
-        run('echo "wahala!"')
+        # run('echo "wahala!"')
         return False
