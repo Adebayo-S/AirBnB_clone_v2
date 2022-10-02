@@ -12,9 +12,10 @@ from fabric.api import env, put, run
 import os.path
 
 env.hosts = ['3.229.122.175', '35.171.146.79']
-env.user = "ubuntul"
+env.user = "ubuntu"
 env.key_filename = '~/.ssh/school'
-env.use_ssh_config
+# env.use_ssh_config
+
 
 def do_deploy(archive_path):
     """ deploy to a web server """
