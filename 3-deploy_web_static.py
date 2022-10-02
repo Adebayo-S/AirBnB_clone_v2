@@ -13,6 +13,7 @@ import os.path
 
 env.hosts = ['3.229.122.175', '35.171.146.79']
 
+
 def do_deploy(archive_path):
     """ deploy to a web server """
     if not os.path.exists(archive_path):
@@ -35,6 +36,7 @@ def do_deploy(archive_path):
         # run('echo "wahala!"')
         return False
 
+
 def deploy():
     """
         Creates and distributes an archive to your web servers
@@ -44,6 +46,7 @@ def deploy():
     if os.path.exists(archive_path) is False:
         return False
     return do_deploy(archive_path)
+
 
 def do_pack():
     """generate .tgz archive of web_static/ folder"""
@@ -55,6 +58,3 @@ def do_pack():
         return filename
     except:
         return None
-
-
-
