@@ -1,9 +1,6 @@
 #!/usr/bin/python3
 """
 script starts Flask web app
-    listen on 0.0.0.0, port 5000
-    routes: /:     display "Hello HBNB!"
-            /hbnb: display "HBNB"
 """
 
 from flask import Flask
@@ -22,6 +19,7 @@ def index():
 def hbnb():
     """displays HBNB"""
     return "HBNB"
+
 
 @app.route("/c/<text>", strict_slashes=False)
 def cisfun(text):
