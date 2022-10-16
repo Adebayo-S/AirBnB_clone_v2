@@ -35,8 +35,8 @@ def pyiscool(text="is cool"):
 
 @app.route("/number/<int:n>", strict_slashes=False)
 def isnumber(n):
-    """  display “n is a number” only if n is an integer """
-    return n + " is a number"
+    """  display 'n' is a number” only if n is an integer """
+    return str(n) + " is a number"
 
 
 if __name__ == "__main__":
