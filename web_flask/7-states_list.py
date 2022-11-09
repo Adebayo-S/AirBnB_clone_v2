@@ -17,7 +17,6 @@ def close_session(error):
 def states_list():
     """ displays HTML page with sorted list of states """
     states = storage.all("State")
-    states = sorted(states, key=lambda k: k.name)
     return render_template('7-states_list.html', states=states)
 
 
